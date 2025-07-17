@@ -20,6 +20,23 @@ The Crypto Command Center is a comprehensive Telegram bot designed to provide us
 ### Quick Price Check
 *   Simply type any cryptocurrency symbol (e.g., `ETH`, `XRP`) to get a quick price check.
 
+## Technical Details
+
+### Architecture
+The bot is built using Node.js and leverages the `node-telegram-bot-api` library for interacting with the Telegram Bot API. HTTP requests to external APIs are handled using `axios`.
+
+### API Integrations
+*   **Telegram Bot API**: For sending and receiving messages, and handling bot commands.
+*   **CoinMarketCap API (Pro)**: Used for fetching cryptocurrency prices, market capitalization, and top gainers/losers.
+*   **Etherscan API**: Provides real-time Ethereum gas fee information.
+*   **CryptoCompare API**: Utilized for fetching the latest cryptocurrency news headlines.
+
+### Data Persistence
+Currently, `db.json` serves as a simple, local placeholder for storing user portfolios and alerts. For a production-ready or serverless deployment, this would typically be replaced with a robust cloud-based database solution such as Firebase Firestore, AWS DynamoDB, MongoDB Atlas, or PostgreSQL.
+
+### Error Handling
+Basic error handling is implemented for API calls to gracefully manage network issues or invalid responses, providing user-friendly messages when data cannot be fetched.
+
 ## Prerequisites
 Before running this bot, ensure you have the following installed:
 *   Node.js (LTS version recommended)
@@ -66,6 +83,9 @@ node index.js
 ```
 
 The bot will start polling for messages. You can then interact with it directly on Telegram.
+
+## Deployment Considerations
+This bot is designed with serverless deployment in mind. While it currently uses polling for simplicity, it can be adapted for webhook-based deployment on platforms like AWS Lambda, Google Cloud Functions, or Vercel. The `fs` and `schedule` modules were removed from `index.js` to facilitate serverless compatibility.
 
 ## Contributing
 Contributions are welcome! Please feel free to open issues or submit pull requests.
