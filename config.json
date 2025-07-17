@@ -1,0 +1,6 @@
+{
+  "telegram_token": "7747381312:AAEeVRCP6T_dJRd1nsE64imujGrJreBJn4E",
+  "coinmarketcap_api_key": "94ae5403-812c-4d04-a46f-7cdfbcc8a7cb",
+  "news_api_key": "YOUR_NEWS_API_KEY",
+  "etherscan_api_key": "YOUR_ETHERSCAN_API_KEY"
+}
